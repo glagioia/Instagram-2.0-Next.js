@@ -39,8 +39,17 @@ function Header() {
                     <div className='flex items-center justify-end space-x-4'>
                         <HomeIcon className='navBtn ' />
                         <MenuIcon className='w-6 h-6 mt-2 md:hidden cursor-pointer' />
-                        
-                        <PaperAirplaneIcon className='navBtn' />
+                        <div className='relative navBtn'>
+                            <PaperAirplaneIcon className='navBtn rotate-45' />
+                            <div className='absolute -top-1 -right-2 text-xs w-5 h-5 bg-red-500 rounded-full flex items-center justify-center  animate-pulse text-white'>
+                                45</div>
+                        </div>
+                        <PlusCircleIcon className='navBtn' />
+                        <UserGroupIcon className='navBtn' />
+                        <HeartIcon className='navBtn' />
+
+                        <img src="https://mir-s3-cdn-cf.behance.net/user/115/4952f2889290823.60af11b761920.jpg" alt='profile pic' className='rounded-full w-8 h-8 mt-2' />
+
                     </div>
                 </div>
             </div>
