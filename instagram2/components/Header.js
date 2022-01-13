@@ -10,17 +10,26 @@ import {
 } from "@heroicons/react/outline"
 
 import { HomeIcon } from '@heroicons/react/solid'
+import { signIn, signOut, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
 
 function Header() {
+
+    const { data: session, status } = useSession()
+    const router = useRouter()
+
+
+
+
     return (
         <div className='shadow-sm border-b bg-white sticky top-0 z-50'>
             <div className='flex justify-between max-w-6xl mx-5 xl:mx-auto'>
 
-                <div className='relative hidden lg:inline-grid w-24 mt-2  cursor-pointer'>
-                    <img src="/instagram.png" layout="fill" objectFit="contain" />
+                <div onClick={() => router.push("/")} className='relative hidden lg:inline-grid w-24 mt-2  cursor-pointer'>
+                    <img src="/instagram.png" layout="fill" />
                 </div>
-                <div className='relative lg:hidden flex-shrink-0  w-8  mt-3  cursor-pointer'>
-                    <img src="/logo.png" layout="fill" objectFit="contain" />
+                <div onClick={() => router.push("/")} className='relative lg:hidden flex-shrink-0  w-8  mt-3  cursor-pointer'>
+                    <img src="/logo.png" layout="fill" />
                 </div>
 
 
@@ -35,10 +44,16 @@ function Header() {
                             placeholder='search' />
                     </div>
                 </div>
+
+
+                {/* {right} */}
                 <div>
                     <div className='flex items-center justify-end space-x-4'>
-                        <HomeIcon className='navBtn ' />
+                        <HomeIcon className='navBtn mt-2 ' />
                         {/* <MenuIcon className='w-6 h-6 mt-2 md:hidden cursor-pointer' /> */}
+
+                        {session ? (
+                        <>    
                         <div className='relative navBtn'>
                             <PaperAirplaneIcon className='navBtn rotate-45' />
                             <div className='absolute -top-1 -right-2 text-xs w-5 h-5 bg-gonza-violet-600 rounded-full flex items-center justify-center  animate-pulse text-white'>
@@ -48,7 +63,14 @@ function Header() {
                         <UserGroupIcon className='navBtn' />
                         <HeartIcon className='navBtn' />
 
-                        <img src="https://mir-s3-cdn-cf.behance.net/user/115/4952f2889290823.60af11b761920.jpg" alt='profile pic' className='rounded-full w-8 h-8 mt-2' />
+                        <img onClick={signOut} src={session?.user?.image} alt='profile pic' className='rounded-full w-8 h-8 mt-2 cursor-pointer' />
+                        </>
+
+                        ) : (
+                            <button className="text-md font-bold text-gonza-violet-500 mt-2 hover:text-gonza-violet-700"onClick={signIn}>Sign In</button>
+
+                        )}
+
 
                     </div>
                 </div>
