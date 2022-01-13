@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Header from '../components/Header'
+import Feed from '../components/Feed'
 
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-gray-50 h-full">
       <Head>
         <title>Instagram 2.0</title>
         <link rel="icon" href="/favicon.ico" />
@@ -15,6 +16,7 @@ export default function Home() {
       <Header/>
 
       {/* {Feed} */}
+      <Feed/>
 
       {/* {Modal} */}
 
