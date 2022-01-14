@@ -5,6 +5,7 @@ import { db } from '../firebase'
 
 
 
+
 function Posts() {
 
     const [posts, setPosts] = useState([]);
