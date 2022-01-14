@@ -12,6 +12,8 @@ export default NextAuth({
         // ...add more providers here
     ],
 
+    secret: process.env.JWT_SECRET,
+
     pages: {
         signIn: "/auth/signin",
     },
@@ -25,6 +27,6 @@ export default NextAuth({
         }
     },
 
-    secret = process.env.JWT_SECRET
+
 
 })
