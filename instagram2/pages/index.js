@@ -11,7 +11,7 @@ export default function Home() {
     <div className="bg-gray-50 h-full">
       <Head>
         <title>Instagram 2.0</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
       </Head>
            
       <Header/>

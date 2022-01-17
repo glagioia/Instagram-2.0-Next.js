@@ -66,7 +66,7 @@ function Header() {
                         <UserGroupIcon className='navBtn' />
                         <HeartIcon className='navBtn' />
 
-                        <img onClick={signOut} src={session?.user?.image} alt='profile pic' className='rounded-full w-8 h-8 mt-2 cursor-pointer' />
+                        <img onClick={() => router.push("/profile")} src={session?.user?.image} alt='profile pic' className='rounded-full w-8 h-8 mt-2 cursor-pointer' />
                         </>
 
                         ) : (
