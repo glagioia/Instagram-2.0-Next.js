@@ -60,7 +60,7 @@ function ProfileHeader() {
                 <div>
                     <div className='flex'>
                     <h2 className="text-[42px] font-light text-gray-500">{session?.user?.username}</h2>
-                    <button className='mt-4 ml-4 h-10 w-32 rounded-[8px] text-center font-bold p-2 border-solid bg-gray-200 '>Editar perfil</button>
+                    <button className='mt-4 ml-4 h-10 w-32 rounded-[8px] text-center font-bold p-2 border-solid bg-gray-200 '>Editar</button>
 
                     </div>
                     <div className='flex justify-between'>
@@ -77,29 +77,29 @@ function ProfileHeader() {
             <div className='h-32 p-8'>
                 <div className='mr-10 ml-10 flex  items-center justify-center '>
 
-                    <div className='flex cursor-pointer mr-20'>
-                        <ViewGridIcon className='h-4 text-gray-500' />
-                        <p className='text-gray-500 text-sm'>PUBLICACIONES</p>
+                    <div className='flex cursor-pointer lg:mr-20  text-gray-500 hover:text-black'>
+                        <ViewGridIcon className='lg:h-4 sm:h-8 text-gray' />
+                        <p className='text-sm lg:visible invisible'>PUBLICACIONES</p>
                     </div>
 
-                    <div className='flex cursor-pointer mr-20'>
-                        <StarIcon className='h-4 text-gray-500' />
-                        <p className='text-gray-500 text-sm'>RELLS</p>
+                    <div className='flex cursor-pointer lg:mr-20  text-gray-500 hover:text-black'>
+                        <StarIcon className='lg:h-4 sm:h-8 text-gray' />
+                        <p className='text-sm lg:visible invisible'>RELLS</p>
                     </div>
 
-                    <div className='flex cursor-pointer mr-20'>
-                        <PlayIcon className='h-4 text-gray-500' />
-                        <p className='text-gray-500 text-sm'>VIDEOS</p>
+                    <div className='flex cursor-pointer lg:mr-20  text-gray-500 hover:text-black'>
+                        <PlayIcon className='lg:h-4 sm:h-8 text-gray' />
+                        <p className='text-sm lg:visible invisible'>VIDEOS</p>
                     </div>
 
-                    <div className='flex cursor-pointer mr-20 '>
-                        <BookmarkIcon className='h-4 text-gray-500' />
-                        <p className='text-gray-500 text-sm'>GUARDADO</p>
+                    <div className='flex cursor-pointer lg:mr-20 text-gray-500 hover:text-black '>
+                        <BookmarkIcon className='lg:h-4 sm:h-8 text-gray' />
+                        <p className=' text-sm lg:visible invisible'>GUARDADO</p>
                     </div>
 
-                    <div className='flex cursor-pointer mr-20'>
-                        <UserIcon className='h-4 text-gray-500' />
-                        <p className='text-gray-500 text-sm'>ETIQUETAS</p>
+                    <div className='flex cursor-pointer lg:mr-20  text-gray-500 hover:text-black'>
+                        <UserIcon className='lg:h-4 sm:h-8 text-gray' />
+                        <p className='text-sm lg:visible invisible'>ETIQUETAS</p>
                     </div>
                 </div>
 
@@ -107,9 +107,9 @@ function ProfileHeader() {
 
             {/*galeria de posts*/}
             <div className='flex justify-center items-center '>
-                <div className='grid grid-cols-3 gap-5'>
+                <div className='grid grid-cols-3 gap-1 sm:gap-5'>
                     {userPosts.map(post => (
-                        <img src={post.data().image} alt='' className='h-64 xs:h-24 min-h-0 w-full object-cover overflow-hidden' />
+                        <img src={post.data().image} alt='post img' className='lg:h-64 h-32 w-full object-cover overflow-hidden cursor-pointer' />
                     ))}
 
                 </div>
